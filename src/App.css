@@ -16,7 +16,7 @@ body{
 }
 
 .task-text{
-  font-size: 25px;
+  font-size: 20px;
   margin-left: 20px;
 }
 
@@ -41,7 +41,8 @@ body{
 button{
   background-color: pink;
   border-color: blueviolet;
-  padding: 15px;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .complete{
