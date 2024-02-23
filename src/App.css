@@ -1,0 +1,63 @@
+body{
+  margin: 0;
+  padding: 20px;
+  background-color: rgb(218, 246, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todoItem{
+  display: flex;
+  background-color: rgb(254, 230, 255);
+  width: 100%;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+.task-text{
+  font-size: 25px;
+  margin-left: 20px;
+}
+
+.inputTodo{
+  width: 300px;
+  height: 5px;
+  border: #525252, 1px, solid;
+  border-radius: 10px;
+  padding: 20px;
+  margin-right: 10px;
+}
+.inputTodoEdit{
+  width: 300px;
+  height: 5px;
+  border: #525252, 1px, solid;
+  border-radius: 10px;
+  padding: 20px;
+  margin-block: 10px;
+  margin-right: 10px;
+}
+
+button{
+  background-color: pink;
+  border-color: blueviolet;
+  padding: 15px;
+}
+
+.complete{
+  color: blue;
+  text-decoration: line-through;
+}
+
+.todoText{
+  padding: 10px;
+  cursor: pointer;
+}
+
+.todoOpts{
+  padding: 10px;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
