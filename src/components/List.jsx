@@ -40,7 +40,7 @@ export const List = () => {
         setTodos(todos.map((todo, i) => i === index ? { ...todo, task: newTask, isEditing: false } : todo));
     };
 
-    // the filter function creates a new array based on the condition so if our chosen i doesn't match the index of an item in our array, it excludes that item from the new array which then, deletes it
+    // the filter function creates a new array based on the condition so if our chosen i matches the index of an item in our array, it excludes that item from the new array which then, deletes it
     const deleteItem = index => {
         setTodos(todos.filter((todo, i) => i !== index));
     };
