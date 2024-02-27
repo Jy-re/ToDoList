@@ -11,7 +11,7 @@ const todosSlice = createSlice({
     reducers: {
         addTodo: (state, action) => {
             state.todos.push({
-                id: state.todos.length, 
+                id: state.todos.length + 1, 
                 task: action.payload,
                 completed: false,
                 isEditing: false,
