@@ -1,14 +1,28 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { deleteTodo, toggleEditTodo, toggleComplete  } from '../feautres/todosSlice' 
 
-export const Item = ({task, markComplete, deleteItem, editItem}) => {
+export const Item = ({ todo }) => {
+  
+  const dispatch = useDispatch()
+
+    const handleEditClick = () => {
+      dispatch(toggleEditTodo(todo.id));
+    };
+
+  const handleToggleComplete = () => {
+    dispatch(toggleComplete(todo.id));
+  };
+  
+
   return (
     <div className='todoItem'>
         <div className='todoText' >
-            <p onClick={() => markComplete(task.task)} className={`${task.completed ? 'complete' : ""} task-text`}>{task.task}</p>
+            <p onClick={handleToggleComplete} className={`${todo.completed ? 'complete' : ""} task-text`}>{todo.task}</p>
         </div>
         <div className='todoOpts'>
-            <button onClick={() => editItem(task.task)}>Edit</button>
-            <button onClick={() => deleteItem(task.task)}>Delete</button>
+            <button onClick={handleEditClick} >Edit</button>
+            <button onClick={() => {dispatch(deleteTodo(todo.id))}} >Delete</button>
         </div>
     </div>
   )

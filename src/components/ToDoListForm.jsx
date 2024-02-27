@@ -1,27 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addTodo } from '../feautres/todosSlice';
 
-export const ToDoListForm = ({addTodo}) => {
+export const ToDoListForm = () => {
+    const dispatch = useDispatch();
+    const [value, setValue] = useState('');
 
-  const [value, setValue] = useState("")
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch(addTodo(value));
+        setValue(''); 
+    };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    addTodo(value)
-
-    setValue("")
-  }
-
-  return (
-    <div className='formContainer'>
-      <form className='addTodoForm' onSubmit={handleSubmit}>
-        <input 
-          type='text' 
-          className='inputTodo' 
-          value={value}
-          placeholder='Add your Todo List for Today!'
-          onChange={(e) => setValue(e.target.value)} />
-        <button type='submit'>Add To Do</button>
-      </form>      
-    </div>
-  )
-}
+    return (
+        <div className='formContainer'>
+            <form className='addTodoForm' onSubmit={handleSubmit}>
+                <input
+                    type='text'
+                    className='inputTodo'
+                    placeholder='Add your Todo List for Today!'
+                    value={value} 
+                    onChange={(e) => setValue(e.target.value)}
+                />
+                <button type='submit'>Add To Do</button>
+            </form>
+        </div>
+    );
+};
